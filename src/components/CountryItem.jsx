@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FlagIcon } from "react-flag-kit";
 function CountryItem({ country }) {
   CountryItem.propTypes = {
-    country: PropTypes.array.isRequired,
+    country: PropTypes.object.isRequired,
   };
   return (
     <li className={styles.countryItem}>

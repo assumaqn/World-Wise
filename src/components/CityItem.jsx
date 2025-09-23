@@ -1,6 +1,7 @@
 import styles from "./CityItem.module.css";
 import PropTypes from "prop-types";
 import { FlagIcon } from "react-flag-kit";
+import { Link } from "react-router-dom";
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
@@ -11,14 +12,16 @@ function CityItem({ city }) {
   CityItem.propTypes = {
     city: PropTypes.object.isRequired,
   };
-  const { cityName, emoji, date } = city;
+  const { cityName, emoji, date, id } = city;
 
   return (
-    <li className={styles.cityItem}>
-      <span className={styles.emoji}>{<FlagIcon code={emoji} />}</span>
-      <span className={styles.name}>{cityName}</span>
-      <time className={styles.date}>({formatDate(date)})</time>
-      <button className={styles.deleteBtn}>&times;</button>
+    <li>
+      <Link className={styles.cityItem} to={`${id}`}>
+        <span className={styles.emoji}>{<FlagIcon code={emoji} />}</span>
+        <span className={styles.name}>{cityName}</span>
+        <time className={styles.date}>({formatDate(date)})</time>
+        <button className={styles.deleteBtn}>&times;</button>
+      </Link>
     </li>
   );
 }
