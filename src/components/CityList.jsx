@@ -3,7 +3,9 @@ import styles from "./CityList.module.css";
 import Spinner from "./Spinner.jsx";
 import Message from "./Message.jsx";
 import PropTypes from "prop-types";
-function CityList({ cities, isLoading }) {
+import { useCities } from "../Context/CitiesContext.jsx";
+function CityList() {
+  const { cities, isLoading } = useCities();
   CityList.propTypes = {
     cities: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
