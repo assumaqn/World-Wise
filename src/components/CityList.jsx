@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { useCities } from "../Context/CitiesContext.jsx";
 function CityList() {
   const { cities, isLoading } = useCities();
+
   CityList.propTypes = {
     cities: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
