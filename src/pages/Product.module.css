@@ -32,3 +32,36 @@
 .product section a {
   margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+  .product section {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .product h2 {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .product {
+    margin: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .product section {
+    width: 100%;
+    margin: 4rem auto;
+    gap: 2rem;
+  }
+
+  .product h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .product p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -17,3 +17,18 @@
   font-size: 3rem;
   line-height: 1;
 }
+@media (max-width: 600px) {
+  .countryItem {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .countryItem span:first-child {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 400px) {
+  .countryItem {
+    padding: 0.8rem 1rem;
+  }
+}
