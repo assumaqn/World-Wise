@@ -9,16 +9,27 @@ import {
 } from "react-leaflet";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useGeolocation } from "../hooks/UseGeoLocation";
 import styles from "./Map.module.css";
 
 import { useCities } from "../Context/CitiesContext";
 import { FlagIcon } from "react-flag-kit";
+import Button from "./Button";
 function Map() {
   const [position, setPosition] = useState([40, 0]);
   const [searchParams] = useSearchParams();
+  const { cities } = useCities();
+  const {
+    isLoading: isLoadingPosition,
+    position: geoPossition,
+    getPosition,
+  } = useGeolocation();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
-  const { cities } = useCities();
+
+  useEffect(() => {
+    if (geoPossition) setPosition([geoPossition.lat, geoPossition.lng]);
+  }, [geoPossition]);
 
   useEffect(() => {
     if (lat && lng) setPosition([lat, lng]);
@@ -26,6 +37,11 @@ function Map() {
 
   return (
     <div className={styles.mapContainer}>
+      {!geoPossition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading.." : "use Your possition"}
+        </Button>
+      )}
       <MapContainer
         center={position}
         zoom={6}
