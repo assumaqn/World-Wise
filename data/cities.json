@@ -35,6 +35,42 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Ordonnaz",
+      "country": "France",
+      "date": "2025-10-04T00:46:41.485Z",
+      "emoji": "FR",
+      "position": {
+        "lat": "45.82879925192134",
+        "lng": "5.559082031250001"
+      },
+      "notes": "jhvsdj",
+      "id": 98443198
+    },
+    {
+      "cityName": "Rot an der Rot",
+      "country": "Germany",
+      "date": "2025-10-04T00:48:43.307Z",
+      "emoji": "DE",
+      "position": {
+        "lat": "47.97521412341618",
+        "lng": "9.953613281250002"
+      },
+      "notes": "hjsdhfs",
+      "id": 98443199
+    },
+    {
+      "cityName": "Ohrdruf",
+      "country": "Germany",
+      "date": "2025-10-04T00:50:44.293Z",
+      "emoji": "DE",
+      "position": {
+        "lat": "50.80593472676908",
+        "lng": "10.744628906250002"
+      },
+      "notes": "dvssdhkvsk",
+      "id": 98443200
     }
   ]
 }
