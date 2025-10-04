@@ -71,6 +71,18 @@
       },
       "notes": "dvssdhkvsk",
       "id": 98443200
+    },
+    {
+      "cityName": "Villarluengo",
+      "country": "Spain",
+      "date": "2025-10-04T01:01:49.164Z",
+      "emoji": "ES",
+      "position": {
+        "lat": "40.64730356252251",
+        "lng": "-0.5273437500000001"
+      },
+      "notes": "jhjdvhs",
+      "id": 98443201
     }
   ]
 }
