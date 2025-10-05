@@ -5,9 +5,10 @@
   display: flex;
   position: relative;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 1200px) {
   .app {
-    padding: 1rem 1.5rem;
+    padding: 2rem;
   }
 }
 @media (max-width: 900px) {
@@ -22,8 +23,14 @@
   flex-direction: column;
   gap: 2rem;
 }
-@media (max-width: 900px) {
-  .main {
-    gap: 1rem;
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .app {
+    padding: 1rem;
   }
 }

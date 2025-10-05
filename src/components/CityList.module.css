@@ -13,9 +13,24 @@
 .cityList::-webkit-scrollbar {
   width: 0;
 }
+@media (min-width: 1200px) {
+  .cityList {
+    height: 70vh;
+  }
+}
+@media (max-width: 800px) {
+  .cityList {
+    height: 60vh;
+  }
+}
 @media (max-width: 600px) {
   .cityList {
     height: auto;
     max-height: 50vh;
+  }
+}
+@media (max-width: 400px) {
+  .cityList {
+    gap: 1rem;
   }
 }
