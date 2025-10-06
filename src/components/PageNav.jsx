@@ -1,12 +1,28 @@
 import { NavLink } from "react-router-dom";
 import style from "./PageNav.module.css";
+import { ReorderThreeOutline, CloseOutline } from "react-ionicons";
 import Logo from "./Logo.jsx";
+import { useState } from "react";
 
 function PageNav() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+
   return (
     <nav className={style.nav}>
       <Logo />
-      <ul>
+
+      {/* Mobile Icon */}
+      <div className={style.mobileIcon} onClick={toggleNav}>
+        {!isNavOpen ? (
+          <ReorderThreeOutline color="#000" height="30px" width="30px" />
+        ) : (
+          <CloseOutline color="#000" height="30px" width="30px" />
+        )}
+      </div>
+
+      {/* Navigation Links */}
+      <ul className={`${style.navLinks} ${isNavOpen ? style.showMenu : ""}`}>
         <li>
           <NavLink to="/Pricing">Pricing</NavLink>
         </li>
@@ -14,9 +30,7 @@ function PageNav() {
           <NavLink to="/Product">Product</NavLink>
         </li>
         <li>
-          <NavLink to="/Login" className={style.ctaLink}>
-            Login
-          </NavLink>
+          <NavLink to="/Login">Login</NavLink>
         </li>
       </ul>
     </nav>
