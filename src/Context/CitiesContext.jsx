@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 
 const CitiesContext = createContext();
 const BASE_URL = "http://localhost:3000";
+
 const initialState = {
   cities: [],
   isLoading: false,
@@ -55,8 +56,8 @@ function CitiesProvider({ children }) {
     async function FetchCities() {
       dispatch({ type: "loading" });
       try {
-        const resp = await fetch(`${BASE_URL}/cities`);
-        const data = await resp.json();
+        const res = await fetch(`${BASE_URL}/cities`);
+        const data = await res.json();
 
         dispatch({ type: "cities/loaded", payload: data });
       } catch (err) {
@@ -71,20 +72,23 @@ function CitiesProvider({ children }) {
 
   const getCities = useCallback(
     async function (id) {
-      if (Number(id) === currentCity.id) return;
+      if (!currentCity || Number(id) === currentCity.id) return;
+
       dispatch({ type: "loading" });
       try {
         const resp = await fetch(`${BASE_URL}/cities/${id}`);
+        if (!resp.ok) throw new Error("Failed to fetch city data");
+
         const data = await resp.json();
         dispatch({ type: "city/loaded", payload: data });
       } catch (err) {
         dispatch({
           type: "rejected",
-          payload: "there is an error getting the city",
+          payload: "There was an error getting the city.",
         });
       }
     },
-    [currentCity.id]
+    [currentCity]
   );
   async function createCity(newCity) {
     dispatch({ type: "loading" });
