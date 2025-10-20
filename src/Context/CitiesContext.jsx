@@ -8,7 +8,7 @@ import {
 import PropTypes from "prop-types";
 
 const CitiesContext = createContext();
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://worldwise-json-server-8ese.onrender.com";
 
 const initialState = {
   cities: [],
