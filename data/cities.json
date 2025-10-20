@@ -35,6 +35,18 @@
       },
       "notes": "sajd",
       "id": 3
+    },
+    {
+      "cityName": "San Genesio Atesino",
+      "country": "Italy",
+      "date": "2025-10-06T12:00:58.333Z",
+      "emoji": "IT",
+      "position": {
+        "lat": "46.60206147314683",
+        "lng": "11.293945312500002"
+      },
+      "notes": "vjkh",
+      "id": 4
     }
   ]
 }

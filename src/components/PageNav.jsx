@@ -15,9 +15,9 @@ function PageNav() {
       {/* Mobile Icon */}
       <div className={style.mobileIcon} onClick={toggleNav}>
         {!isNavOpen ? (
-          <ReorderThreeOutline color="#000" height="30px" width="30px" />
+          <ReorderThreeOutline color="#fffe" height="30px" width="30px" />
         ) : (
-          <CloseOutline color="#000" height="30px" width="30px" />
+          <CloseOutline color="#fffe" height="30px" width="30px" />
         )}
       </div>
 
